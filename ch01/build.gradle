@@ -1,12 +1,9 @@
 plugins {
-	id 'org.springframework.boot' version '2.1.4.RELEASE'
 	id 'java'
 }
 
-apply plugin: 'io.spring.dependency-management'
-
 group = 'com.ciaoshen'
-version = '0.0.1-SNAPSHOT'
+// version = '???'
 sourceCompatibility = '1.8'
 
 repositories {
@@ -14,6 +11,104 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework:spring-context:5.1.6.RELEASE'
+	implementation 'org.aspectj:aspectjweaver:1.9.3'
+	testImplementation 'junit:junit:4.12'
+	testImplementation 'org.mockito:mockito-core:2.23.4'
+}
+
+/**
+ * #############################################################################
+ * 1.1.1 Hello World 例子
+ * #############################################################################
+ */
+
+/** 不打包成jar，直接运行KnightMain */
+// version = '1.1.1-helloworld'
+task runHelloWorldMain(type: JavaExec) {
+	main = 'com.ciaoshen.sia4.ch01.helloworld_111.HelloWorldMain'
+	classpath += sourceSets.main.runtimeClasspath
+}
+
+/**
+ * #############################################################################
+ * 1.1.2 DI Knight-Quest 例子
+ * #############################################################################
+ */
+
+ sourceSets {
+ 	main {
+ 		resources {
+ 			exclude 'spring/'
+ 		}
+ 	}
+ }
+
+/**
+ * 如果想打包成一个可执行app.jar，
+ * 运行可执行jar，classpath参数无效。虚拟机只会到app.jar内部找依赖类。
+ * 解决方法一：
+ * 		把所有依赖库jar包里的class文件解压出来，直接放到可执行app.jar里。
+ *   	参考这篇文章：https://blog.csdn.net/wenfengzhuo/article/details/10741825
+================================================================================
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.ciaoshen.sia4.ch01.knights.KnightMain'
+    }
+
+	configurations.implementation.each {
+		println it.name
+		from(project.zipTree(it))
+	}
+}
+
+task runKnightMainJar(dependsOn: jar, type: JavaExec) {
+	main = '-jar'; args 'build/libs/sia4-ch01-1.1.2-SNAPSHOT.jar'
+}
+==============================================================================*/
+
+
+/**
+ * 打包成可执行app.jar
+ * 解决方法二：
+ * 		把库包下载到本地。然后把相对地址添加到jar包的manifest文件的Class-Path属性。
+ *   	注意：lib1.jar, lib2.jar库包必须在可执行app.jar包的外部。
+ *   	内部套嵌的jar库无法被读取。参考这个讨论：
+ *   	https://stackoverflow.com/questions/12357136/reference-jars-inside-a-jar
+================================================================================
+task copyLibs(type: Copy) {
+	from configurations.implementation
+	into 'build/libs/'
+}
+
+jar {
+	manifest {
+        attributes 'Main-Class': 'com.ciaoshen.sia4.ch01.knights.KnightMain'
+		attributes 'Class-Path': configurations.implementation.collect { it.name }.join(' ')
+	}
+}
+
+jar.dependsOn copyLibs
+
+task runKnightMainJar(dependsOn: jar, type: JavaExec) {
+	main = '-jar'; args 'build/libs/sia4-ch01-1.1.2-SNAPSHOT.jar'
+}
+==============================================================================*/
+
+/** 不打包成jar，直接运行KnightMain */
+// version = '1.1.2-knight'
+task runKnightMain(type: JavaExec) {
+	main = 'com.ciaoshen.sia4.ch01.knights_112.KnightMain'
+	classpath += sourceSets.main.runtimeClasspath
+}
+
+/** 不打包成jar，直接运行KnightMain */
+version = '1.1.3-minstrel'
+task runMinstrelMain(type: JavaExec) {
+	main = 'com.ciaoshen.sia4.ch01.minstrel_113.MinstrelMain'
+	classpath += sourceSets.main.runtimeClasspath
+
+	classpath.each {
+		println it.name
+	}
 }
