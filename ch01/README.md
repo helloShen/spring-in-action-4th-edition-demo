@@ -1,20 +1,13 @@
 # Spring in Action 4th Edition - Chapter 1 Note
 
-### 前言
-本章使用下列常量：
-* `$CHAPTER-HOME`：第一章代码的根目录
-    * 本地：`~/github/spring-in-action-4th-edition-demo/ch01`
-    * Github： `https://github.com/helloShen/spring-in-action-4th-edition-demo/ch01`
+### 【春】晓
+{{春眠不觉晓},{处处闻啼鸟},{夜来风雨声},{花落知多少}}
 
 ### 1.1.1 `HelloWorld`例子
 
-#### 应用快照：`$CHAPTER-HOME/build/libs/sia4-ch01-1.1.1-helloworld.jar`
+#### 代码地址 -> <https://github.com/helloShen/spring-in-action-4th-edition-demo/tree/master/ch01/src/main/java/com/ciaoshen/sia4/ch01/helloworld_111>
 封装在`helloworld_111`包下，结构如下，
 ```
-sia4-ch01-1.1.1-helloworld
-├── META-INF
-│   └── MANIFEST.MF
-├── application.properties
 └── com
     └── ciaoshen
         └── sia4
@@ -33,13 +26,9 @@ sia4-ch01-1.1.1-helloworld
 
 ### 1.1.2 依赖注入，`Knight-Quest`例子
 
-#### 应用快照：`$CHAPTER-HOME/build/libs/sia4-ch01-1.1.2-knight.jar`
+#### 代码地址 -> <https://github.com/helloShen/spring-in-action-4th-edition-demo/tree/master/ch01/src/main/java/com/ciaoshen/sia4/ch01/knights_112>
 封装在`knights_112`包下，结构如下，
 ```
-sia4-ch01-1.1.2-knight
-├── META-INF
-│   └── MANIFEST.MF
-├── application.properties
 └── com
     └── ciaoshen
         └── sia4
@@ -70,14 +59,10 @@ sia4-ch01-1.1.2-knight
 
 ### 1.1.3 面向切面编程（AOP），`Minstrel`例子
 
-#### 应用快照：`$CHAPTER-HOME/build/libs/sia4-ch01-1.1.3-minstrel.jar`
+#### 代码地址 -> <https://github.com/helloShen/spring-in-action-4th-edition-demo/tree/master/ch01/src/main/java/com/ciaoshen/sia4/ch01/minstrel_113>
 封装在`minstrel_113`包下，
 
 ```
-sia4-ch01-1.1.3-minstrel
-├── META-INF
-│   └── MANIFEST.MF
-├── application.properties
 └── com
     └── ciaoshen
         └── sia4
@@ -98,3 +83,6 @@ sia4-ch01-1.1.3-minstrel
 书上用的是XML配置法。之前XML配置法有问题，而且现在不常用了，所以该用AspectJ配置。先在`Minstrel`类里用AspectJ的`@Aspect`，`@Before`和`@After`注解定义切面。然后在`MinstrelConfig`配置类里，把`Minstrel`定义成除了`Knight`和`Quest`型之外的第三个bean。
 
 至此，`Minstrel`只是spring中的一个普通bean。虽然被定义成了切面，但spring不会将他视为切面。它关于切面的所有注解不会被解析，也不会转换成切面代理。必须最后在`MinstrelConfig`类上打上`spring-context`包里的`@ComponentScan`和`@EnableAspectJAutoProxy`注解，告诉spring自动扫描切面类，并自动包装成切面代理。这时`Minstrel`的前置和后置通知才能被织入到`Knight-Quest`的事务中。
+
+### 其他
+第一章其他内容都是泛泛而谈。之后章节会具体介绍。
