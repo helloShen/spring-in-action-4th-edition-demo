@@ -19,7 +19,6 @@ public class CDPlayerTest {
     @Test
     public void cdShouldNotBeNull() {
         assertNotNull(cd);
-        assertThat(cd.toString().equals("Playing [Life is more than six pense] by @Dajin AI"), is(true));
     }    
 
 }
