@@ -5,8 +5,8 @@
 </br>
 连绵阴雨后，又是西瓜好。
 
-### chapter 1 -> [第1章笔记](https://github.com/helloShen/spring-in-action-4th-edition-demo/blob/master/ch01/README.md)
+### chapter 1 -> [【第1章笔记】](https://github.com/helloShen/spring-in-action-4th-edition-demo/blob/master/ch01/README.md) [【第1章代码】](https://github.com/helloShen/spring-in-action-4th-edition-demo/tree/master/ch01)
 ![spring](https://img.shields.io/badge/spring--context-5.1.6-brightgreen.svg) ![aspectj](https://img.shields.io/badge/aspectjweaver-1.9.3-brightgreen.svg) ![junit](https://img.shields.io/badge/junit-4.12-brightgreen.svg) ![mokito](https://img.shields.io/badge/mokito--core-2.23.4-brightgreen.svg)
 
-### chapter 2 -> [第2章笔记](https://github.com/helloShen/spring-in-action-4th-edition-demo/blob/master/ch01/README.md)
+### chapter 2 -> [【第2章笔记】](https://github.com/helloShen/spring-in-action-4th-edition-demo/blob/master/ch01/README.md) [【第2章代码】](https://github.com/helloShen/spring-in-action-4th-edition-demo/tree/master/ch02)
 ![spring-context](https://img.shields.io/badge/spring--context-5.1.6-brightgreen.svg) ![spring-test](https://img.shields.io/badge/spring--test-5.1.6-brightgreen.svg) ![junit](https://img.shields.io/badge/junit-4.12-brightgreen.svg) ![hamcrest](https://img.shields.io/badge/hamcrest--all-1.3-brightgreen.svg)
