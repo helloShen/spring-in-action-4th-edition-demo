@@ -2,6 +2,12 @@
 
 ![spring-context](https://img.shields.io/badge/spring--context-5.1.6-brightgreen.svg) ![spring-test](https://img.shields.io/badge/spring--test-5.1.6-brightgreen.svg) ![junit](https://img.shields.io/badge/junit-4.12-brightgreen.svg) ![hamcrest](https://img.shields.io/badge/hamcrest--all-1.3-brightgreen.svg)
 
+### 摘要
+* `@Component`和`@ComponentScan`实现用注解自动扫描bean组件。`@Component`直接在类上标注，`@ComponentScan`扫描并初始化所有带`@Component`的组件。
+* XML也可以开启自动扫描，把`@ComponentScan`注解换成XML的`<context:component-scan>`标签即可。
+* 不自动扫描需要在配置类里用`@Bean`注解手动标注。
+* XML也可以手动标注，也有`<bean>`标签，但现在不常用了。看看就行。
+
 ### 2.2 Annotation自动装配的例子
 
 #### 代码地址：<https://github.com/helloShen/spring-in-action-4th-edition-demo/tree/master/ch02>
@@ -106,3 +112,24 @@ XML配置的话，`@ContextConfiguration`注解属性要改成`@ContextConfigura
 之前负责自动装备的`@Component`和`@ComponentScan`注解全部去掉。改为在`CDPlayerConfig`里用`@Bean`注解直接注册bean组件。声明的时候，还可以带上`name`属性，方便在出现多个同类型bean组件的时候指定特定的bean。
 
 注册完bean组件之后，同样在`CDPlayerTest`测试类里加上`@Autowired`标签以智能装配合适的bean组件。
+
+像下面这种方式引用其他的bean是一种优良实践。spring会自动推断`compactDisc`合适的实例。并且不会反复调用`CompactDisc`类的构造器，spring装配的始终是上下文中的那个bean单例。
+```java
+@Bean
+public CDPlayer cdPlayer(CompactDisc compactDisc) { // spring会推断出合适的bean来装配
+    return new CDPlayer(compactDisc);
+}
+```
+
+还有像下面这种方式获得的也是bean单例，
+```java
+@Bean
+public CompactDisc sixPense() {
+    return new SixPense();
+}
+
+@Bean
+public CDPlayer cdPlayer() {
+    return new CDPlayer(sixPense()); // spring拦截对SixPense()构造函数的调用，始终返回单例。
+}
+```
