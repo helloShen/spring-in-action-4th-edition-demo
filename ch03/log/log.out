@@ -1,0 +1,20 @@
+magic environment property = ON
+General logger created!
+Magic bean created!
+In testMaticBean() method... ...
+[org.springframework.context.annotation.internalConfigurationAnnotationProcessor, org.springframework.context.annotation.internalAutowiredAnnotationProcessor, org.springframework.context.annotation.internalCommonAnnotationProcessor, org.springframework.context.event.internalEventListenerProcessor, org.springframework.context.event.internalEventListenerFactory, conditionConfig, magic-exist, log]
+MamiMami~HONG~~~阿弥陀佛
+Logger for profile created!
+Call SayHelloFromDev constructor to create instance.
+My SayHelloFromDev war born alive!
+Say hello from develop environment.
+Assign SayHello instance by @Autowired
+Say hello from develop environment.
+Get SayHello instance from context by bean id.
+Say hello from develop environment.
+logger full class name = org.slf4j.impl.Log4jLoggerAdapter
+logger created in qualifier_33 test.
+1 dessert created. -> Hello, I am IceCream!
+1 dessert created. -> Hello, I am Popsicle!
+Object icecream is instance of IceCream.
+Object popsicle is instance of Popsicle.

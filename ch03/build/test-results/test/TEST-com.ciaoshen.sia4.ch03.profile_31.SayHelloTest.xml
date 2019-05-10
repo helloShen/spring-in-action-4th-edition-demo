@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ciaoshen.sia4.ch03.profile_31.SayHelloTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-05-10T02:35:04" hostname="MacBook-Pro-de-Wei.local" time="0.008">
+  <properties/>
+  <testcase name="testSayHello" classname="com.ciaoshen.sia4.ch03.profile_31.SayHelloTest" time="0.008"/>
+  <system-out><![CDATA[Logger for profile created!
+Call SayHelloFromDev constructor to create instance.
+My SayHelloFromDev war born alive!
+Say hello from develop environment.
+Assign SayHello instance by @Autowired
+Say hello from develop environment.
+Get SayHello instance from context by bean id.
+Say hello from develop environment.
+logger full class name = org.slf4j.impl.Log4jLoggerAdapter
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ciaoshen.sia4.ch03.qualifier_33.QualifierTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-05-10T02:35:04" hostname="MacBook-Pro-de-Wei.local" time="0.002">
+  <properties/>
+  <testcase name="testQualifier" classname="com.ciaoshen.sia4.ch03.qualifier_33.QualifierTest" time="0.002"/>
+  <system-out><![CDATA[logger created in qualifier_33 test.
+1 dessert created. -> Hello, I am IceCream!
+1 dessert created. -> Hello, I am Popsicle!
+Object icecream is instance of IceCream.
+Object popsicle is instance of Popsicle.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

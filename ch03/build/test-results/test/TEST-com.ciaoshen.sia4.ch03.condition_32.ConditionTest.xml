@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ciaoshen.sia4.ch03.condition_32.ConditionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-05-10T02:35:04" hostname="MacBook-Pro-de-Wei.local" time="0.006">
+  <properties/>
+  <testcase name="testMagicBean" classname="com.ciaoshen.sia4.ch03.condition_32.ConditionTest" time="0.006"/>
+  <system-out><![CDATA[magic environment property = ON
+General logger created!
+Magic bean created!
+In testMaticBean() method... ...
+[org.springframework.context.annotation.internalConfigurationAnnotationProcessor, org.springframework.context.annotation.internalAutowiredAnnotationProcessor, org.springframework.context.annotation.internalCommonAnnotationProcessor, org.springframework.context.event.internalEventListenerProcessor, org.springframework.context.event.internalEventListenerFactory, conditionConfig, magic-exist, log]
+MamiMami~HONG~~~阿弥陀佛
+]]></system-out>
+  <system-err><![CDATA[log4j:WARN No appenders could be found for logger (org.springframework.test.context.junit4.SpringJUnit4ClassRunner).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+]]></system-err>
+</testsuite>

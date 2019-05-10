@@ -1,0 +1,31 @@
+
+plugins {
+	id 'java'
+}
+
+group = 'com.ciaoshen'
+version = '3.3-qualifier'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// spring
+	implementation 'org.springframework:spring-context:5.1.6.RELEASE'
+	implementation 'org.springframework:spring-beans:5.1.6.RELEASE'
+	implementation 'org.springframework:spring-core:5.1.6.RELEASE'
+	testImplementation 'org.springframework:spring-test:5.1.6.RELEASE'
+	// junit & hamcrest
+	testImplementation 'junit:junit:4.12'
+	testImplementation 'org.hamcrest:hamcrest-all:1.3'
+	// log4j & slf4j
+	configurations.all { // 不禁用spring-jcl，无法嫁接到slf4j上
+		exclude group: 'org.springframework', module: 'spring-jcl'
+	}
+	implementation 'org.slf4j:jcl-over-slf4j:1.7.26' // Spring日志组件面向Jakarta Common Logging接口，需要再加一层和jcl和slf4j之间的桥接
+	implementation "org.slf4j:slf4j-api:1.7.26"
+	implementation 'org.slf4j:slf4j-log4j12:1.7.26'
+	implementation "log4j:log4j:1.2.17"
+}
