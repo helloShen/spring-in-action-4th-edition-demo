@@ -73,6 +73,8 @@ private SayHello sayHelloBot;
 
 具体判定魔法是否存在，我们在`Environment`中设置一个环境变量`magic`，只有当`magic = ON`的时候，才会创建MagicBean单例。配置环境变量，只要在配置类`ConditionConfig`上加上`@PropertySource("classpath:env.properties)`，让他去`src/main/resources/env.properties`配置文件，其中配置了`magic=ON`。`matches()`函数要获得`Environment`实例引用可以通过`matches()`函数的参数`ConditionContext.getEnvironment()`拿到。
 
+一个需要注意的地方是不要试图在实现了`Condition`接口的判定类中引用bean实例。你可以粗略地理解为Spring对判定类的`matches()`函数的调用都是在创建bean实例的过程中，至少spring不能保证此时所有需要注册的bean都已经正确实例化。这和不要在类的构造函数里调用类方法以及类字段是一个道理。
+
 `condition_32`包因为没有激活`@Profile`，所以不会和`profile_31`包的测试上下文混起来。每个测试类，比如`profile_31/SayHelloTest.java`和`condition_32/ConditionTest.java`都有各自的上下文`ApplicationContext`实例。
 
 ### 3.3 `@Qualifier`实验
@@ -147,7 +149,7 @@ implementation "log4j:log4j:1.2.17"
 ...
 ```
 
-### 简单说一下`jcl-over-slf4j`的原理
+#### 简单说一下`jcl-over-slf4j`的原理
 Spring面向`commons-logging`，也就是代码里会导入下面的库。代码中对`Log`和`LogFactory`的调用不可逆转地会指向`commons-logging`的库。
 ```
 import org.apache.commons.logging.Log;
@@ -177,10 +179,47 @@ org
 详细过程参考下面这张图，
 ![to-use-slf4j-in-spring](images/sia4-ch03/to-use-slf4j-in-spring.png)
 
+#### 解决标准输出无法在终端输出的问题
+我的`log4j.properties`已经配置了将`console`扩展器定向到标准输出，但此时运行gradle构建，终端不会有输出。
+```
+# Configure stdout
+log4j.appender.console=org.apache.log4j.ConsoleAppender
+log4j.appender.console.Target=System.out
+... ...
+... ...
+```
+
+问题出在gradle。gradle会把写到标准输出`STANDARD_OUT`的所有内容重定向到它的日志系统的`QUIET`级别中，把标准错误`STANDARD_ERROR`的内容重新定向到`ERROR`级别。gradle一共有6个级别，`QUIET`是仅次于`ERROR`的第二高级别。而gradle默认的日志级别是`LIFECYCLE`，比`QUITE`要低一级。也就是说默认情况标准输出和标准错误的内容都应该正常输出。
+![log-levels](images/sia4-ch03/log-levels.png)
+
+但是gradle的日志容器还加了额外一道锁。负责这个日志容器配置的是`test.testLogging`字段，
+![gradle-testlogging-1](images/sia4-ch03/gradle-testlogging-1.png)
+![gradle-testlogging-2](images/sia4-ch03/gradle-testlogging-2.png)
+
+它是一个`TestLoggingContainer`类，其中的`showStandardStreams`参数默认为不显示标准输出的内容。
+![showStandardStreams](/images/sia4-ch03/show-standard-streams.png)
+
+所以想要在控制台输出标准输出，还需要修改这个`showStandardStreams`参数。在`build.gradle`中可以这么修改，
+```
+test {
+    testLogging {
+		outputs.upToDateWhen {false}  // 就算test没有更新内容，仍然输出
+		showStandardStreams = true    // 显示标准输出和标准错误的内容
+	}
+}
+```
+
 
 ### 参考文献
 * 在profile中声明配置文件位置 -> <https://www.jianshu.com/p/948c303b2253>
 * 简单的用JavaConfig和XML两种方法使用`@Profile` -> <https://www.concretepage.com/spring-5/spring-profiles>
 * 另一个spring官方`@Profile`文档 -> <https://spring.io/blog/2011/02/14/spring-3-1-m1-introducing-profile/>
+* 怎么获得所有已注册bean的实例 -> <https://stackoverflow.com/questions/9602664/print-all-the-spring-beans-that-are-loaded>
+* 在测试中导入多个配置类 -> <https://spring.io/blog/2011/06/21/spring-3-1-m2-testing-with-configuration-classes-and-profiles>
+* 实现`Condition`接口的判定类中不要试图引用bean实例 -> <https://stackoverflow.com/questions/52071886/how-to-inject-a-bean-into-a-spring-condition-class>
+* Spring中怎么设置`Environment`环境变量-> <https://docs.spring.io/spring-boot/docs/current/reference/html/howto-properties-and-configuration.html>
 * Logging模块的官方解释 -> <https://docs.spring.io/spring/docs/4.3.14.RELEASE/spring-framework-reference/html/overview.html>
 * jcl-over-slf4j的官方文档 -> <https://www.slf4j.org/legacy.html>
+* 怎么在终端显示gradle标准输出 -> <https://stackoverflow.com/questions/9356543/logging-while-testing-through-gradle>
+* gradle`test`任务官方文档 -> <https://docs.gradle.org/current/dsl/org.gradle.api.tasks.testing.Test.html>
+* gradle`TestLoggingContainer`类官方文档 -> <https://docs.gradle.org/current/dsl/org.gradle.api.tasks.testing.logging.TestLoggingContainer.html>
