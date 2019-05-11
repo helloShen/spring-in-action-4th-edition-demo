@@ -32,7 +32,9 @@ dependencies {
 
 test {
     testLogging {
-		outputs.upToDateWhen {false}
-		showStandardStreams = true
+		outputs.upToDateWhen {false}  						// 就算test没有更新内容，仍然输出
+		showStandardStreams = true    						// 显示标准输出和标准错误的内容
+        exceptionFormat 'full'        						// 显示所有异常跟踪栈内容
+        events 'started', 'skipped', 'passed', 'failed'     // 记录特定测试事件
 	}
 }

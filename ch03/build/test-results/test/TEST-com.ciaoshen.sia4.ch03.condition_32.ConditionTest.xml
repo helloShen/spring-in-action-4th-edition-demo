@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ciaoshen.sia4.ch03.condition_32.ConditionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-05-11T00:04:22" hostname="MacBook-Pro-de-Wei.local" time="0.013">
+<testsuite name="com.ciaoshen.sia4.ch03.condition_32.ConditionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-05-11T03:11:42" hostname="MacBook-Pro-de-Wei.local" time="0.008">
   <properties/>
-  <testcase name="testMagicBean" classname="com.ciaoshen.sia4.ch03.condition_32.ConditionTest" time="0.013"/>
+  <testcase name="testMagicBean" classname="com.ciaoshen.sia4.ch03.condition_32.ConditionTest" time="0.008"/>
   <system-out><![CDATA[magic environment property = ON
 General logger created!
 Magic bean created!

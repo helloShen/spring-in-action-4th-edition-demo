@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ciaoshen.sia4.ch03.qualifier_33.QualifierTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-05-11T00:04:22" hostname="MacBook-Pro-de-Wei.local" time="0.004">
+<testsuite name="com.ciaoshen.sia4.ch03.qualifier_33.QualifierTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-05-11T03:11:43" hostname="MacBook-Pro-de-Wei.local" time="0.001">
   <properties/>
-  <testcase name="testQualifier" classname="com.ciaoshen.sia4.ch03.qualifier_33.QualifierTest" time="0.004"/>
+  <testcase name="testQualifier" classname="com.ciaoshen.sia4.ch03.qualifier_33.QualifierTest" time="0.001"/>
   <system-out><![CDATA[logger created in qualifier_33 test.
 1 dessert created. -> Hello, I am IceCream!
 1 dessert created. -> Hello, I am Popsicle!
