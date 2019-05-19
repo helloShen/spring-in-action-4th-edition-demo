@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ciaoshen.sia4.ch04.aop_around_43.TestAopAround" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-05-19T00:44:45" hostname="MacBook-Pro-de-Wei.local" time="0.004">
+  <properties/>
+  <testcase name="testAopAround" classname="com.ciaoshen.sia4.ch04.aop_around_43.TestAopAround" time="0.004"/>
+  <system-out><![CDATA[下面是郭德纲《你字系列》专场第0个节目: 
+    >>>《你要唱歌》
+        ~~~吁吁吁吁吁吁吁吁~~~
+下面是郭德纲《你字系列》专场第2个节目: 
+    >>>《你得娶我》
+        ~~~吁吁吁吁吁吁吁吁~~~
+下面是郭德纲《你字系列》专场第5个节目: 
+    >>>《你好新北京》
+        ~~~吁吁吁吁吁吁吁吁~~~
+下面是郭德纲《你字系列》专场第4个节目: 
+    >>>《你要做善人》
+        ~~~吁吁吁吁吁吁吁吁~~~
+下面是郭德纲《你字系列》专场第3个节目: 
+    >>>《你这半辈子》
+        ~~~吁吁吁吁吁吁吁吁~~~
+]]></system-out>
+  <system-err><![CDATA[May 18, 2019 8:44:45 PM org.springframework.test.context.support.AbstractTestContextBootstrapper getDefaultTestExecutionListenerClassNames
+INFO: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+May 18, 2019 8:44:45 PM org.springframework.test.context.support.AbstractTestContextBootstrapper getTestExecutionListeners
+INFO: Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@348d5f39, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3f100488, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1b499100]
+]]></system-err>
+</testsuite>

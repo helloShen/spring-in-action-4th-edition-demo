@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ciaoshen.sia4.ch04.aop_parameter_xml_44.TestAopParameterXml" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-05-19T00:44:45" hostname="MacBook-Pro-de-Wei.local" time="0.012">
+  <properties/>
+  <testcase name="testAopParameterXml" classname="com.ciaoshen.sia4.ch04.aop_parameter_xml_44.TestAopParameterXml" time="0.012"/>
+  <system-out><![CDATA[Track Counts = {}
+Old count of track #2 = [0]
+Now count of track #2 = [1]
+Playing track #[2]: Lucy in the Sky with Diamonds
+Track Counts = {2=1}
+Old count of track #0 = [0]
+Now count of track #0 = [1]
+Playing track #[0]: Sgt. Pepper's Lonely Hearts Club Band
+Track Counts = {0=1, 2=1}
+Old count of track #4 = [0]
+Now count of track #4 = [1]
+Playing track #[4]: Fixing a Hole
+Track Counts = {0=1, 2=1, 4=1}
+Old count of track #3 = [0]
+Now count of track #3 = [1]
+Playing track #[3]: Getting Better
+Track Counts = {0=1, 2=1, 3=1, 4=1}
+Old count of track #2 = [1]
+Now count of track #2 = [2]
+Playing track #[2]: Lucy in the Sky with Diamonds
+Track Counts = {0=1, 2=2, 3=1, 4=1}
+Old count of track #3 = [1]
+Now count of track #3 = [2]
+Playing track #[3]: Getting Better
+Track Counts = {0=1, 2=2, 3=2, 4=1}
+Old count of track #1 = [0]
+Now count of track #1 = [1]
+Playing track #[1]: With a Little Help from My Friends
+Track Counts = {0=1, 1=1, 2=2, 3=2, 4=1}
+Old count of track #3 = [2]
+Now count of track #3 = [3]
+Playing track #[3]: Getting Better
+Track Counts = {0=1, 1=1, 2=2, 3=3, 4=1}
+Old count of track #3 = [3]
+Now count of track #3 = [4]
+Playing track #[3]: Getting Better
+Track Counts = {0=1, 1=1, 2=2, 3=4, 4=1}
+Old count of track #4 = [1]
+Now count of track #4 = [2]
+Playing track #[4]: Fixing a Hole
+Track Counter = {0=1, 1=1, 2=2, 3=4, 4=2}
+Track #0 played [1] times.
+Track #1 played [1] times.
+Track #2 played [2] times.
+Track #3 played [4] times.
+Track #4 played [2] times.
+]]></system-out>
+  <system-err><![CDATA[May 18, 2019 8:44:45 PM org.springframework.test.context.support.AbstractTestContextBootstrapper getDefaultTestExecutionListenerClassNames
+INFO: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+May 18, 2019 8:44:45 PM org.springframework.test.context.support.AbstractTestContextBootstrapper getTestExecutionListeners
+INFO: Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7f83c54f, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3924140, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5f46eabd]
+]]></system-err>
+</testsuite>

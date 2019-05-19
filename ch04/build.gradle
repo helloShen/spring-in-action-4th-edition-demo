@@ -1,12 +1,9 @@
 plugins {
-	id 'org.springframework.boot' version '2.1.4.RELEASE'
 	id 'java'
 }
 
-apply plugin: 'io.spring.dependency-management'
-
 group = 'com.ciaoshen'
-version = '0.0.1-SNAPSHOT'
+version = '4.4-aop-xml'
 sourceCompatibility = '1.8'
 
 repositories {
@@ -14,6 +11,24 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// spring
+	implementation 'org.springframework:spring-context:5.1.6.RELEASE'
+	implementation 'org.springframework:spring-beans:5.1.6.RELEASE'
+	implementation 'org.springframework:spring-core:5.1.6.RELEASE'
+	testImplementation 'org.springframework:spring-test:5.1.6.RELEASE'
+	// aspectj
+	implementation 'org.aspectj:aspectjweaver:1.9.4'
+	// junit & hamcrest
+	testImplementation 'junit:junit:4.12'
+	testImplementation 'org.hamcrest:hamcrest-all:1.3'
+}
+
+
+test {
+    testLogging {
+		outputs.upToDateWhen {false}  						// 就算test没有更新内容，仍然输出
+		showStandardStreams = true    						// 显示标准输出和标准错误的内容
+        exceptionFormat 'full'        						// 显示所有异常跟踪栈内容
+        events 'started', 'skipped', 'passed', 'failed'     // 记录特定测试事件
+	}
 }
