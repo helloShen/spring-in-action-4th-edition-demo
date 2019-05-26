@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ciaoshen.sia4.ch05.with_parameter_53.spittr.HomeControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-05-25T22:27:04" hostname="MacBook-Pro-de-Wei.local" time="0.057">
+  <properties/>
+  <testcase name="shouldShowSpittleFound" classname="com.ciaoshen.sia4.ch05.with_parameter_53.spittr.HomeControllerTest" time="0.043"/>
+  <testcase name="testHomePage" classname="com.ciaoshen.sia4.ch05.with_parameter_53.spittr.HomeControllerTest" time="0.014"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[May 25, 2019 6:27:04 PM org.springframework.mock.web.MockServletContext log
+INFO: Initializing Spring TestDispatcherServlet ''
+May 25, 2019 6:27:04 PM org.springframework.web.servlet.FrameworkServlet initServletBean
+INFO: Initializing Servlet ''
+May 25, 2019 6:27:04 PM org.springframework.web.servlet.FrameworkServlet initServletBean
+INFO: Completed initialization in 0 ms
+May 25, 2019 6:27:04 PM org.springframework.mock.web.MockServletContext log
+INFO: Initializing Spring TestDispatcherServlet ''
+May 25, 2019 6:27:04 PM org.springframework.web.servlet.FrameworkServlet initServletBean
+INFO: Initializing Servlet ''
+May 25, 2019 6:27:04 PM org.springframework.web.servlet.FrameworkServlet initServletBean
+INFO: Completed initialization in 0 ms
+]]></system-err>
+</testsuite>

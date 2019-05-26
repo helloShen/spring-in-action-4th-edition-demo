@@ -1,0 +1,39 @@
+plugins {
+	id 'java'
+	// id 'war'
+}
+
+group = 'com.ciaoshen'
+version = '5.2-basic-controller'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// spring
+	implementation 'org.springframework:spring-context:5.1.6.RELEASE'
+	implementation 'org.springframework:spring-beans:5.1.6.RELEASE'
+	implementation 'org.springframework:spring-core:5.1.6.RELEASE'
+	implementation 'org.springframework:spring-webmvc:5.1.6.RELEASE'
+	testImplementation 'org.springframework:spring-test:5.1.6.RELEASE'
+	// junit & hamcrest
+	testImplementation 'junit:junit:4.12'
+	testImplementation 'org.hamcrest:hamcrest-all:1.3'
+	// mockito
+	testImplementation 'org.mockito:mockito-core:2.27.0'
+	// servlet
+	implementation 'javax.servlet:javax.servlet-api:4.0.1'
+	// apache common lang3
+	implementation 'org.apache.commons:commons-lang3:3.9'
+}
+
+test {
+    testLogging {
+		outputs.upToDateWhen {false}  						// 就算test没有更新内容，仍然输出
+		showStandardStreams = true    						// 显示标准输出和标准错误的内容
+        exceptionFormat 'full'        						// 显示所有异常跟踪栈内容
+        events 'started', 'skipped', 'passed', 'failed'     // 记录特定测试事件
+	}
+}
