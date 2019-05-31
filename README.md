@@ -20,4 +20,7 @@
 ### chapter 5 -> [【第5章笔记】](https://github.com/helloShen/spring-in-action-4th-edition-demo/blob/master/ch05/README.md) [【第5章代码】](https://github.com/helloShen/spring-in-action-4th-edition-demo/tree/master/ch05)
 ![spring-context](https://img.shields.io/badge/spring--context-5.1.6-brightgreen.svg) ![spring-core](https://img.shields.io/badge/spring--core-5.1.6-brightgreen.svg) ![spring-beans](https://img.shields.io/badge/spring--beans-5.1.6-brightgreen.svg) ![spring-test](https://img.shields.io/badge/spring--test-5.1.6-brightgreen.svg)![spring-webmvc](https://img.shields.io/badge/spring--webmvc-5.1.6-brightgreen.svg) ![servlet-api](https://img.shields.io/badge/servlet--api-5.1.6-brightgreen.svg) ![commons-lang3](https://img.shields.io/badge/commons--lang3-3.9-brightgreen.svg) ![mockito-core](https://img.shields.io/badge/mockito--core-2.27.0-brightgreen.svg)![junit](https://img.shields.io/badge/junit-4.12-brightgreen.svg) ![hamcrest](https://img.shields.io/badge/hamcrest--all-1.3-brightgreen.svg) ![log4j](https://img.shields.io/badge/log4j-1.2.17-brightgreen.svg) ![slf4j](https://img.shields.io/badge/slf4j-1.7.26-brightgreen.svg)
 
+### chapter 6 -> [【第6章笔记】](https://github.com/helloShen/spring-in-action-4th-edition-demo/blob/master/ch06/README.md) [【第6章代码】](https://github.com/helloShen/spring-in-action-4th-edition-demo/tree/master/ch06)
+
+
 ### 番外篇 -> [【关于Gradle中Logging的配置】](https://github.com/helloShen/spring-in-action-4th-edition-demo/blob/master/ch03/logging-in-gradle.md)

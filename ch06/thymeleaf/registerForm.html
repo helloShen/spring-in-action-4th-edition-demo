@@ -1,0 +1,25 @@
+<form method="POST" th:object="${spitter}"> <!-- SpEL表达式，解析为Model中key为spitter的属性 -->
+    <div class="errors" th:if="${#fields.hasErrors('*')}">
+        <ul>
+            <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
+        </ul>
+    </div>
+
+    <label th:class="${#fields.hasErrors{'firstName'}}? 'error'">First Name</label>
+        <input type="text" th:field="*{firstName}" <!-- 选择表达式，针对选中对象spitter，绑定spitter.firstName域 -->
+            th:class="${#fields.hasErrors('firstName')? 'error'}" /><br/>
+
+    <label th:class="${#fields.hasErrors{'lastName'}}? 'error'">Last Name</label>
+            <input type="text" th:field="*{lastName}"
+                th:class="${#fields.hasErrors('lastName')? 'error'}" /><br/>
+
+    <label th:class="${#fields.hasErrors{'username'}}? 'error'">Username</label>
+            <input type="text" th:field="*{username}"
+                th:class="${#fields.hasErrors('username')? 'error'}" /><br/>
+
+    <label th:class="${#fields.hasErrors{'password'}}? 'error'">Password</label>
+            <input type="text" th:field="*{password}"
+                th:class="${#fields.hasErrors('password')? 'error'}" /><br/>
+
+    <input type="submit" value="Register" />
+</form>
